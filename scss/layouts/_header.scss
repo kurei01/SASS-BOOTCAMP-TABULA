@@ -1,0 +1,51 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background-color: transparent;
+  .logo img {
+    width: 80px;
+  }
+
+  .navbar {
+    a {
+      padding-right: 50px;
+      @include Text($text-sm, $text-semiBold, $c1-200);
+      transition: all 100ms linear;
+      line-height: 70px;
+      &:hover {
+        color: $c2-700;
+      }
+    }
+
+    .topBarMenu {
+      a {
+        margin: 6px;
+        @include button(
+          transparent,
+          1px solid $c2-700,
+          50px,
+          1.1em 1.5em,
+          0 0 0 3em #b61984 inset
+        );
+        @include Text($text-sm, $text-medium, #fff);
+        i {
+          padding-right: 0.5em;
+        }
+        &:hover {
+          color: $c2-700;
+          box-shadow: 0 0 0 1px #b61984 inset;
+        }
+      }
+      i {
+        padding-left: 0.8em;
+        cursor: pointer;
+        &:hover {
+          color: $c2-700;
+        }
+      }
+    }
+  }
+}

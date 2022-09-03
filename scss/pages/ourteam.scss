@@ -1,0 +1,183 @@
+@import "../common/base";
+@import "../theme/variable";
+@import "../theme/mixin";
+@import "../layouts/header";
+@import "../layouts/footer";
+
+.carousel {
+  padding: 4em 0;
+
+  .col-left {
+    p {
+      @include Text($text-base, $text-semiBold, $c2-700);
+      margin-bottom: 0.5em;
+    }
+    h2 {
+      @include Text($text-3xl, $text-bold, $c1-100);
+      line-height: 1.2em;
+    }
+  }
+
+  .before {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.portfolio {
+  background-color: #dcd1f3;
+  background-image: url(../img/Wave_White_bottom_right_shape_01.png);
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  @for $i from 1 through 4 {
+    .col-#{$i} {
+      animation-delay: $i * 200ms;
+    }
+
+    .col-#{$i + 4} {
+      animation-delay: $i * 200ms;
+    }
+  }
+  .col {
+    padding: 0 20px;
+    margin-top: 40px;
+    .item {
+      background-color: rgba(255, 255, 255, 1);
+      padding: 0 2em;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 300ms ease-in-out;
+
+      .thumb {
+        margin: 0 -2em;
+        transform: scale3d(1, 1, 1);
+        transition: transform 650ms ease-in-out, filter 650ms ease-in-out;
+        margin-bottom: 20px;
+        &:hover {
+          transform: scale3d(1.05, 1.05, 1.05);
+        }
+      }
+
+      .text {
+        span {
+          @include Text($text-xs, $text-semiBold, $c2-700);
+          margin-bottom: 0.7em;
+        }
+        h4 {
+          @include Text($text-lg, $text-bold, $c1-100);
+          line-height: 1.2em;
+          margin-bottom: 0.5em;
+        }
+        p {
+          @include Text($text-sm, $text-medium, $c1-200);
+          margin-bottom: 3em;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+.find_course {
+  height: 700px;
+  padding-top: 6em;
+  background-image: url(../img/accent_bottom_wave_01.png);
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  .row {
+    width: 1040px;
+    margin: 0 auto;
+    .col {
+      padding: 0 40px;
+    }
+    .col-right {
+      .item {
+        background-color: rgba(255, 255, 255, 1);
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 40px 25px;
+        width: 100%;
+        box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.2);
+        .content {
+          h4 {
+            @include Text($text-xls, $text-bold, $c1-100);
+            margin-bottom: 50px;
+          }
+          .btSearch {
+            position: relative;
+            .btSearchType {
+              transition: all 500ms ease;
+              border-radius: 50px;
+              outline: none;
+              width: 100%;
+              background: transparent;
+              line-height: 1;
+              padding: 1em 1em 1em 3.5em;
+              font-size: 0.8em;
+              height: 3.7em;
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              &:focus {
+                border: 1px solid rgba(0, 0, 0, 0.3);
+                box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+              }
+            }
+            .typetextarea {
+              height: 90px;
+              line-height: 1.5;
+              border-radius: 20px;
+            }
+
+            i {
+              position: absolute;
+              top: 1em;
+              left: 1em;
+              line-height: 1;
+              color: $c2-700;
+            }
+            .after {
+              position: absolute;
+              top: 1em;
+              left: 90%;
+              line-height: 1;
+              color: $c2-700;
+            }
+          }
+
+          .Searchbt {
+            max-width: 160px;
+            padding-top: 2em;
+            input {
+              border-radius: 50px;
+              height: 3.8em;
+              line-height: 3.1em;
+              margin-bottom: 24px;
+              width: 100%;
+              box-shadow: 0 0 0 3em $c2-700 inset;
+              outline: none;
+              letter-spacing: 1px;
+              transition: all 300ms ease;
+              border: transparent;
+              @include Text($text-sm, $text-semiBold, #fff);
+              &:hover {
+                box-shadow: 0 0 0 1px $c2-700 inset;
+                color: $c2-700;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+//var
+$c1-100: #191919;
+$c1-200: #181818;
+
+$c2-700: #b61984;
+
+$text-xs: 0.75rem;
+$text-sm: 0.8375rem;
+$text-base: 1rem;
+$text-md: 1.25rem;
+$text-lg: 1.5rem;
+$text-xl: 2rem;
+$text-xls: 2.5rem;
+$text-2xl: 3rem;
+$text-3xl: 4rem;
+$text-4xl: 5rem;
+
+$text-light: 300;
+$text-regular: 400;
+$text-medium: 500;
+$text-semiBold: 600;
+$text-bold: 700;
+$text-extraBold: 900;
+
+
+$breakPoints: (
+  "xs": 576px,
+  "sm": 768px,
+  "md": 992px,
+  "lg": 1280px,
+);
+
+@function getBreakPoint($k) {
+  @if (map-has-key($map: $breakPoints, $key: $k)) {
+    @return map-get($breakPoints, $k);
+  }
+  @error "invalid key!!";
+}
